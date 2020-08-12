@@ -18,3 +18,29 @@ function convertString($a, $b)
 }
 
 convertString("isalexis", "is");
+
+/*функию mySortForKey($a, $b). $a – двумерный массив вида [['a'=>2,'b'=>1],['a'=>1,'b'=>3]], $b – ключ вложенного массива.
+Результат ее выполнения: двумерном массива $a отсортированный по возрастанию значений для ключа $b.
+В случае отсутствия ключа $b в одном из вложенных массивов, выбросить ошибку класса Exception с индексом неправильного массива*/
+
+$a = [['a'=>2,'b'=>1],['a'=>1,'b'=>3], ['a'=>8,'b'=>2]];
+
+function mySortForKey($a, $b)
+{
+    foreach ($a as $key => $row) {
+        if (!isset($row[$b])) {
+            throw new Exception('В одном из вложенных массивов отсутствует указанный ключ');
+        }else{
+            $b_arr[$key]  = $row[$b];
+        }
+    }
+    array_multisort($b_arr, SORT_ASC, $a);
+    return $a;
+}
+
+try {
+    $a = mySortForKey($a, 'b');
+    var_dump($a);
+} catch (Exception $e) {
+    echo 'Выброшено исключение: ',  $e->getMessage(), "\n";
+}
