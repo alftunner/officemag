@@ -1,0 +1,156 @@
+(
+    [Товар] => Array
+        (
+            [0] => SimpleXMLElement Object
+                (
+                    [@attributes] => Array
+                        (
+                            [Код] => 201
+                            [Название] => Бумага А4
+                        )
+
+                    [Цена] => Array
+                        (
+                            [0] => SimpleXMLElement Object
+                                (
+                                    [@attributes] => Array
+                                        (
+                                            [Тип] => Базовая
+                                            [Значение] => 11.50
+                                        )
+
+                                )
+
+                            [1] => SimpleXMLElement Object
+                                (
+                                    [@attributes] => Array
+                                        (
+                                            [Тип] => Москва
+                                            [Значение] => 12.50
+                                        )
+
+                                )
+
+                        )
+
+                    [Свойства] => SimpleXMLElement Object
+                        (
+                            [Плотность] => 100
+                            [Белизна] => SimpleXMLElement Object
+                                (
+                                    [@attributes] => Array
+                                        (
+                                            [ЕдИзм] => %
+                                            [Значение] => 150
+                                        )
+
+                                )
+
+                        )
+
+                    [Разделы] => SimpleXMLElement Object
+                        (
+                            [Раздел] => Бумага
+                        )
+
+                )
+
+            [1] => SimpleXMLElement Object
+                (
+                    [@attributes] => Array
+                        (
+                            [Код] => 202
+                            [Название] => Бумага А3
+                        )
+
+                    [Цена] => Array
+                        (
+                            [0] => 18.50
+                            [1] => 22.50
+                        )
+
+                    [Свойства] => SimpleXMLElement Object
+                        (
+                            [Плотность] => 90
+                            [Белизна] => 100
+                        )
+
+                    [Разделы] => SimpleXMLElement Object
+                        (
+                            [Раздел] => Бумага
+                        )
+
+                )
+
+            [2] => SimpleXMLElement Object
+                (
+                    [@attributes] => Array
+                        (
+                            [Код] => 302
+                            [Название] => Принтер Canon
+                        )
+
+                    [Цена] => Array
+                        (
+                            [0] => 3010
+                            [1] => 3500
+                        )
+
+                    [Свойства] => SimpleXMLElement Object
+                        (
+                            [Формат] => Array
+                                (
+                                    [0] => A4
+                                    [1] => A3
+                                )
+
+                            [Тип] => Лазерный
+                        )
+
+                    [Разделы] => SimpleXMLElement Object
+                        (
+                            [Раздел] => Array
+                                (
+                                    [0] => Принтеры
+                                    [1] => МФУ
+                                )
+
+                        )
+
+                )
+
+            [3] => SimpleXMLElement Object
+                (
+                    [@attributes] => Array
+                        (
+                            [Код] => 305
+                            [Название] => Принтер HP
+                        )
+
+                    [Цена] => Array
+                        (
+                            [0] => 3310
+                            [1] => 2999
+                        )
+
+                    [Свойства] => SimpleXMLElement Object
+                        (
+                            [Формат] => A3
+                            [Тип] => Лазерный
+                        )
+
+                    [Разделы] => SimpleXMLElement Object
+                        (
+                            [Раздел] => Array
+                                (
+                                    [0] => Принтеры
+                                    [1] => МФУ
+                                )
+
+                        )
+
+                )
+
+        )
+
+)

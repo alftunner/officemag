@@ -17,6 +17,8 @@ function dataBaseConnect() //функция для соединения с БД
 
 function getProductId($conn, $code, $name) //функция для получения id текущего товара
 {
+    $code = mysqli_real_escape_string($conn, $code);
+    $name = mysqli_real_escape_string($conn, $name);
     $sql_select = "SELECT id from a_product WHERE code = '{$code}' and name = '{$name}' ORDER BY id DESC";
     $res = mysqli_query($conn, $sql_select);
     $row = $res->fetch_assoc();
@@ -39,8 +41,20 @@ function insertPrice($conn, $product, $product_id) //функция для до�
         $price_type = $price["Тип"];
         $price_value = (double)$price["Значение"];
 
-        $sql = "INSERT INTO a_price (product_id, type, price) VALUES ('{$product_id}', '{$price_type}', '{$price_value}')";
-        insertToDB($conn, $sql);
+        $price_type = mysqli_real_escape_string($conn, $price_type);
+        $price_value = mysqli_real_escape_string($conn, $price_value);
+
+        $sql = "SELECT id from a_price WHERE product_id='{$product_id}' and type='{$price_type}' and price='{$price_value}'";
+        $res = mysqli_query($conn, $sql);
+        $row = $res->fetch_assoc();
+        if(!empty($row['id']))
+        {
+            echo "\n" . "Внимание: запись где id = {$product_id}, type = {$price_type}, price = {$price_value} уже существует!";
+        }
+        else{
+            $sql = "INSERT INTO a_price (product_id, type, price) VALUES ('{$product_id}', '{$price_type}', '{$price_value}')";
+            insertToDB($conn, $sql);
+        }
     }
 }
 
@@ -53,8 +67,20 @@ function insertProperty($conn, $product, $product_id) //функция для д
             $property_type = $key;
             $property_value = $value;
 
-            $sql = "INSERT INTO a_property (product_id, type, value) VALUES ('{$product_id}', '{$property_type}', '{$property_value}')";
-            insertToDB($conn, $sql);
+            $property_type = mysqli_real_escape_string($conn, $property_type);
+            $property_value = mysqli_real_escape_string($conn, $property_value);
+
+            $sql = "SELECT id from a_price WHERE product_id='{$product_id}' and type='{$property_type}' and price='{$property_value}'";
+            $res = mysqli_query($conn, $sql);
+            $row = $res->fetch_assoc();
+            if(!empty($row['id']))
+            {
+                echo "\n" . "Внимание: запись где id = {$product_id}, type = {$property_type}, price = {$property_value} уже существует!";
+            }
+            else{
+                $sql = "INSERT INTO a_property (product_id, type, value) VALUES ('{$product_id}', '{$property_type}', '{$property_value}')";
+                insertToDB($conn, $sql);
+            }
         }
     }
 }
@@ -65,6 +91,7 @@ function insertCategory($conn, $product, $product_id) //функция для д
     {
         foreach ($category as $key=>$value)
         {
+            $value = mysqli_real_escape_string($conn, $value);
             $sql_select = "SELECT id from a_category WHERE name = '{$value}'";
             $res = mysqli_query($conn, $sql_select);
             $row = $res->fetch_assoc();
@@ -98,19 +125,29 @@ function parseXml($xml) // Парсит xml и раскладывает по т�
         $code = $product["Код"];
         $name = $product["Название"];
 
-        $sql = "INSERT INTO a_product (code, name) VALUES ('{$code}', '{$name}')";
-        if (mysqli_query($conn, $sql)) {
-            echo "\n" ."New record created successfully";
-            $product_id = getProductId($conn, $code, $name);
-            insertPrice($conn, $product, $product_id);
-            insertProperty($conn, $product, $product_id);
-            insertCategory($conn, $product, $product_id);
+        $code = mysqli_real_escape_string($conn, $code);
+        $name = mysqli_real_escape_string($conn, $name);
 
-        } else {
-            echo "\n" ."Error: " . $sql . "<br>" . mysqli_error($conn);
+        $sql = "SELECT id from a_product WHERE code='{$code}' and name='{$name}'";
+        $res = mysqli_query($conn, $sql);
+        $row = $res->fetch_assoc();
+        if(!empty($row['id']))
+        {
+            echo "\n" . "Внимание: запись где code = {$code}, name = {$name} уже существует!";
         }
+        else{
+            $sql = "INSERT INTO a_product (code, name) VALUES ('{$code}', '{$name}')";
+            if (mysqli_query($conn, $sql)) {
+                echo "\n" ."New record created successfully";
+                $product_id = getProductId($conn, $code, $name);
+                insertPrice($conn, $product, $product_id);
+                insertProperty($conn, $product, $product_id);
+                insertCategory($conn, $product, $product_id);
 
-
+            } else {
+                echo "\n" ."Error: " . $sql . "<br>" . mysqli_error($conn);
+            }
+        }
     }
 }
 function importXml($a) // Финальная функция, если фаил доступет, то парсит и кладет в БД
