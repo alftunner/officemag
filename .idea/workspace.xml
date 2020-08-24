@@ -19,9 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="532c58f9-70f7-41a1-a78e-fb039553eab7" name="Default Changelist" comment="Добавление экранирования значений для избежания sql-инъекций + проверка на наличие такой записи в БД">
+    <list default="true" id="532c58f9-70f7-41a1-a78e-fb039553eab7" name="Default Changelist" comment="Добавление экранирования значений для избежания sql-инъекций + проверка на наличие такой записи в БД + проверка на наличие узлов xml">
+      <change afterPath="$PROJECT_DIR$/4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.php" beforeDir="false" afterPath="$PROJECT_DIR$/3.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +48,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/OpenServer/modules/php/PHP_7.1/php.exe" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
-  <component name="RunManager" selected="PHP Script.3.php">
+  <component name="RunManager" selected="PHP Script.4.php">
     <configuration name="2.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/2.php">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -64,12 +65,22 @@
       </CommandLine>
       <method v="2" />
     </configuration>
+    <configuration name="4.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/4.php">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP (1)" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="PHP Script.2.php" />
       <item itemvalue="PHP Script.3.php" />
+      <item itemvalue="PHP Script.4.php" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.4.php" />
         <item itemvalue="PHP Script.3.php" />
         <item itemvalue="PHP Script.2.php" />
       </list>
@@ -85,7 +96,8 @@
       <updated>1597161585672</updated>
       <workItem from="1597161592651" duration="4133000" />
       <workItem from="1597241815901" duration="2015000" />
-      <workItem from="1597843073556" duration="22085000" />
+      <workItem from="1597843073556" duration="22719000" />
+      <workItem from="1598282981101" duration="13915000" />
     </task>
     <task id="LOCAL-00001" summary="first task">
       <created>1597167036665</created>
@@ -122,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598037384582</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавление экранирования значений для избежания sql-инъекций + проверка на наличие такой записи в БД + проверка на наличие узлов xml">
+      <created>1598038409386</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1598038409386</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +165,8 @@
     <MESSAGE value="importXml" />
     <MESSAGE value="importXml+database" />
     <MESSAGE value="Добавление экранирования значений для избежания sql-инъекций + проверка на наличие такой записи в БД" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление экранирования значений для избежания sql-инъекций + проверка на наличие такой записи в БД" />
+    <MESSAGE value="Добавление экранирования значений для избежания sql-инъекций + проверка на наличие такой записи в БД + проверка на наличие узлов xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление экранирования значений для избежания sql-инъекций + проверка на наличие такой записи в БД + проверка на наличие узлов xml" />
   </component>
   <component name="WindowStateProjectService">
     <state x="540" y="175" key="#CLI_Interpreters" timestamp="1597849858673">
@@ -161,30 +181,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597849852337" />
-    <state width="1877" height="429" key="GridCell.Tab.0.bottom" timestamp="1598038339295">
+    <state width="1877" height="429" key="GridCell.Tab.0.bottom" timestamp="1598300371124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="429" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598038339295" />
-    <state width="1877" height="429" key="GridCell.Tab.0.center" timestamp="1598038339295">
+    <state width="1877" height="429" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598300371124" />
+    <state width="1877" height="429" key="GridCell.Tab.0.center" timestamp="1598300371123">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="429" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598038339295" />
-    <state width="1877" height="429" key="GridCell.Tab.0.left" timestamp="1598038339295">
+    <state width="1877" height="429" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598300371123" />
+    <state width="1877" height="429" key="GridCell.Tab.0.left" timestamp="1598300371123">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="429" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598038339295" />
-    <state width="1877" height="429" key="GridCell.Tab.0.right" timestamp="1598038339295">
+    <state width="1877" height="429" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598300371123" />
+    <state width="1877" height="429" key="GridCell.Tab.0.right" timestamp="1598300371123">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="429" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598038339295" />
+    <state width="1877" height="429" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598300371123" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1597850411919">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1597850411919" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1597843114774">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1598283712767">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597843114774" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598283712767" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1597852813481">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
