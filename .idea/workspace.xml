@@ -19,10 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="532c58f9-70f7-41a1-a78e-fb039553eab7" name="Default Changelist" comment="Добавление экранирования значений для избежания sql-инъекций + проверка на наличие такой записи в БД + проверка на наличие узлов xml">
-      <change afterPath="$PROJECT_DIR$/4.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file2.xml" afterDir="false" />
+    <list default="true" id="532c58f9-70f7-41a1-a78e-fb039553eab7" name="Default Changelist" comment="Последняя задача(не окончательная версия)">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.php" beforeDir="false" afterPath="$PROJECT_DIR$/3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4.php" beforeDir="false" afterPath="$PROJECT_DIR$/4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +37,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" xdebug_debug_port="9001" xdebug_show_addresses="true" hide_empty_superglobals="false" listening_started="true" />
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="248ec8c4-ac1d-46f3-91d2-6635d90360b3" name="localhost" />
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP (1)" />
+  <component name="PhpXdebugProxy" ide_key="PHPSTORM" host="localhost" />
   <component name="ProjectId" id="1fxZCeEUG5ltZKNVGY68YUUOQVs" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -44,9 +54,10 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/OpenServer/modules/php/PHP_7.1/php.exe" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.php.debug.xdebug.proxy" />
   </component>
   <component name="RunManager" selected="PHP Script.4.php">
     <configuration name="2.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/2.php">
@@ -97,7 +108,7 @@
       <workItem from="1597161592651" duration="4133000" />
       <workItem from="1597241815901" duration="2015000" />
       <workItem from="1597843073556" duration="22719000" />
-      <workItem from="1598282981101" duration="13915000" />
+      <workItem from="1598282981101" duration="21763000" />
     </task>
     <task id="LOCAL-00001" summary="first task">
       <created>1597167036665</created>
@@ -141,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598038409386</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Последняя задача(не окончательная версия)">
+      <created>1598300461972</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1598300461972</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,37 +184,54 @@
     <MESSAGE value="importXml+database" />
     <MESSAGE value="Добавление экранирования значений для избежания sql-инъекций + проверка на наличие такой записи в БД" />
     <MESSAGE value="Добавление экранирования значений для избежания sql-инъекций + проверка на наличие такой записи в БД + проверка на наличие узлов xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление экранирования значений для избежания sql-инъекций + проверка на наличие такой записи в БД + проверка на наличие узлов xml" />
+    <MESSAGE value="Последняя задача(не окончательная версия)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Последняя задача(не окончательная версия)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="540" y="175" key="#CLI_Interpreters" timestamp="1597849858673">
+    <state x="540" y="175" key="#CLI_Interpreters" timestamp="1598373144742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="175" key="#CLI_Interpreters/0.0.1920.1040@0.0.1920.1040" timestamp="1597849858673" />
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597850383553">
+    <state x="540" y="175" key="#CLI_Interpreters/0.0.1920.1040@0.0.1920.1040" timestamp="1598373144742" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598372164430">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597850383553" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598372164430" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1597849852337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597849852337" />
-    <state width="1877" height="429" key="GridCell.Tab.0.bottom" timestamp="1598300371124">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1598377745901">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="429" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598300371124" />
-    <state width="1877" height="429" key="GridCell.Tab.0.center" timestamp="1598300371123">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598377745901" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1598377745901">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="429" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598300371123" />
-    <state width="1877" height="429" key="GridCell.Tab.0.left" timestamp="1598300371123">
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598377745901" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1598377745901">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="429" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598300371123" />
-    <state width="1877" height="429" key="GridCell.Tab.0.right" timestamp="1598300371123">
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598377745901" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1598377745901">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="429" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598300371123" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598377745901" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1598377745901">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598377745901" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1598377745901">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598377745901" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1598377745901">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598377745901" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1598377745901">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598377745901" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1597850411919">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -205,10 +240,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598283712767" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1597852813481">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1598373282777">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1597852813481" />
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598373282777" />
     <state x="756" y="340" width="408" height="355" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1597856728380">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -217,5 +252,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="803" y="293" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597862501136" />
+    <state x="512" y="249" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1598373392345">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="512" y="249" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1598373392345" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="javascript-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
