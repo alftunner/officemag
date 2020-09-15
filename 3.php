@@ -1,190 +1,207 @@
 <?php
-function dataBaseConnect() //функция для соединения с БД
+
+namespace Test3;
+
+class newBase
+
+
 {
-    $link = mysqli_connect("127.0.0.1", "alftunner", "", "test_samson");
-
-    if (!$link) {
-        echo "Ошибка: Невозможно установить соединение с MySQL." . PHP_EOL;
-        echo "Код ошибки errno: " . mysqli_connect_errno() . PHP_EOL;
-        echo "Текст ошибки error: " . mysqli_connect_error() . PHP_EOL;
-        exit;
-    }
-
-    echo "Соединение с MySQL установлено!" . PHP_EOL;
-    echo "Информация о сервере: " . mysqli_get_host_info($link) . PHP_EOL;
-    return $link;
-}
-
-function getProductId($conn, $code, $name) //функция для получения id текущего товара
-{
-    $code = mysqli_real_escape_string($conn, $code);
-    $name = mysqli_real_escape_string($conn, $name);
-    $sql_select = "SELECT id from a_product WHERE code = '{$code}' and name = '{$name}' ORDER BY id DESC";
-    $res = mysqli_query($conn, $sql_select);
-    $row = $res->fetch_assoc();
-    return $row['id'];
-}
-
-function insertToDB($conn, $sql) //функция для получения информации о успешном или неуспешном добавлении данных в БД
-{
-    if (mysqli_query($conn, $sql)) {
-        echo "\n" . "New record created successfully";
-    } else {
-        echo "\n" . "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-}
-
-function insertPrice($conn, $product, $product_id) //функция для добаления цены в БД
-{
-    if(isset($product->Цена))
+    static private $count = 0;
+    static private $arSetName = [];
+    /**
+     * @param string $name
+     */
+    function __construct(int $name = null) //TODO не может быть нулём, только null
     {
-        foreach ($product->Цена as $price)
-        {
-            $price_type = $price["Тип"];
-            $price_value = (double)$price["Значение"];
-
-            $price_type = mysqli_real_escape_string($conn, $price_type);
-            $price_value = mysqli_real_escape_string($conn, $price_value);
-
-            $sql = "SELECT id from a_price WHERE product_id='{$product_id}' and type='{$price_type}' and price='{$price_value}'";
-            $res = mysqli_query($conn, $sql);
-            $row = $res->fetch_assoc();
-            if(!empty($row['id']))
-            {
-                echo "\n" . "Внимание: запись где id = {$product_id}, type = {$price_type}, price = {$price_value} уже существует!";
+        if (empty($name)) {
+            while (array_search(self::$count, self::$arSetName) != false) {
+                ++self::$count;
             }
-            else{
-                $sql = "INSERT INTO a_price (product_id, type, price) VALUES ('{$product_id}', '{$price_type}', '{$price_value}')";
-                insertToDB($conn, $sql);
-            }
+            $name = self::$count;
+        }
+        $this->name = $name;
+        self::$arSetName[] = $this->name;
+    }
+    protected $name; //TODO ? изменение на protected
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return '*' . $this->name  . '*';
+    }
+    protected $value;
+
+    /**
+     * @param mixed $value
+     * @return newBase
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+        return $this; //TODO добавил
+    }
+    /**
+     * @return string
+     */
+    public function getSize()
+    {
+        $size = strlen(serialize($this->value));
+        return strlen($size) + $size;
+    }
+    public function __sleep()
+    {
+        return ['value'];
+    }
+    /**
+     * @return string
+     */
+    public function getSave(): string
+    {
+        $value = serialize($this->value); //TODO добавление this перед value в serialize()
+        return $this->name . ':' . sizeof($value) . ':' . $value;
+    }
+
+    /**
+     * @param string $value
+     * @return newBase
+     */
+    static public function load(string $value): newBase
+    {
+        $arValue = explode(':', $value);
+        return (new newBase($arValue[0]))
+            ->setValue(unserialize(substr($value, strlen($arValue[0]) + 1
+                + strlen($arValue[1]) + 1), $arValue[1])); //TODO ?
+    }
+}
+class newView extends newBase
+{
+    private $type = null;
+    private $size = 0;
+    private $property = null;
+    /**
+     * @param mixed $value
+     */
+    public function setValue($value)
+    {
+        parent::setValue($value);
+        $this->setType();
+        $this->setSize();
+        return $this;
+    }
+    public function setProperty($value)
+    {
+        $this->property = $value;
+        //echo '$this->property'.$this->property;
+        //echo '$value'.$value;
+        return $this; //TODO ?
+    }
+    private function setType()
+    {
+        $this->type = gettype($this->value);
+    }
+    private function setSize()
+    {
+        if (is_subclass_of($this->value, "Test3\\newView")) { //TODO ? добавил экранирование слэша
+            $this->size = parent::getSize() + 1 + strlen($this->property);
+        } elseif ($this->type == 'test') {
+            $this->size = parent::getSize();
+        } else {
+            $this->size = strlen($this->value);
         }
     }
-    else{
-        echo "\n Узла ЦЕНА не существует в xml";
-    }
-}
-
-function insertProperty($conn, $product, $product_id) //функция для добавления свойств товара в БД
-{
-    if (isset($product->Свойства))
+    /**
+     * @return string
+     */
+    public function __sleep()
     {
-        foreach ($product->Свойства as $property)
-        {
-            foreach ($property as $key=>$value)
-            {
-                $property_type = $key;
-                $property_value = $value;
-
-                $property_type = mysqli_real_escape_string($conn, $property_type);
-                $property_value = mysqli_real_escape_string($conn, $property_value);
-
-                $sql = "SELECT id from a_price WHERE product_id='{$product_id}' and type='{$property_type}' and price='{$property_value}'";
-                $res = mysqli_query($conn, $sql);
-                $row = $res->fetch_assoc();
-                if(!empty($row['id']))
-                {
-                    echo "\n" . "Внимание: запись где id = {$product_id}, type = {$property_type}, price = {$property_value} уже существует!";
-                }
-                else{
-                    $sql = "INSERT INTO a_property (product_id, type, value) VALUES ('{$product_id}', '{$property_type}', '{$property_value}')";
-                    insertToDB($conn, $sql);
-                }
-            }
+        return ['property'];
+    }
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        if (empty($this->name)) {
+            throw new Exception('The object doesn\'t have name');
+        }
+        return '"' . $this->name  . '": ';
+    }
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return ' type ' . $this->type  . ';';
+    }
+    /**
+     * @return string
+     */
+    public function getSize(): string
+    {
+        return ' size ' . $this->size . ';';
+    }
+    public function getInfo()
+    {
+        try {
+            echo $this->getName()
+                . $this->getType()
+                . $this->getSize()
+                . "\r\n";
+        } catch (Exception $exc) {
+            echo 'Error: ' . $exc->getMessage();
         }
     }
-    else{
-        echo "\n Узла СВОЙСТВА не существует в xml";
-    }
-
-}
-
-function insertCategory($conn, $product, $product_id) //функция для добавления данных о категориях (в xml файле "Разделы"), если такой раздел существует, то записывает данные о связи продукта с категорией, если не существует, сначала создает категорию, затем устанавливает связь
-{
-    if(isset($product->Разделы))
+    /**
+     * @return string
+     */
+    public function getSave(): string
     {
-        foreach ($product->Разделы as $category)
-        {
-            foreach ($category as $key=>$value)
-            {
-                $value = mysqli_real_escape_string($conn, $value);
-                $sql_select = "SELECT id from a_category WHERE name = '{$value}'";
-                $res = mysqli_query($conn, $sql_select);
-                $row = $res->fetch_assoc();
-                $category_id = $row['id'];
-
-                if (!empty($category_id)) {
-                    $sql = "INSERT INTO a_relation_product_category (product_id, category_id) VALUES ('{$product_id}', '{$category_id}')";
-                    insertToDB($conn, $sql);
-                } else {
-                    $sql = "INSERT INTO a_category (name) VALUES ('{$value}')";
-                    insertToDB($conn, $sql);
-
-                    $sql_select = "SELECT id from a_category WHERE name = '{$value}'";
-                    $res = mysqli_query($conn, $sql_select);
-                    $row = $res->fetch_assoc();
-                    $category_id = $row['id'];
-
-                    $sql = "INSERT INTO a_relation_product_category (product_id, category_id) VALUES ('{$product_id}', '{$category_id}')";
-                    insertToDB($conn, $sql);
-                }
-            }
+        if ($this->type == 'test') {
+            $this->value = parent::getSave() . serialize($this->property); // TODO заменил $this->$value->getSave()
         }
-    }
-    else{
-        echo "\n Узла РАЗДЕЛЫ не существует в xml";
+        return parent::getSave() . serialize($this->property);
     }
 
-}
-
-function parseXml($xml) // Парсит xml и раскладывает по таблицам БД
-{
-    $conn = dataBaseConnect();
-
-    if(isset($xml->Товар))
+    /**
+     * @param string $value
+     * @return newView
+     */
+    static public function load(string $value): newBase
     {
-        foreach ($xml->Товар as $product)
-        {
-            $code = $product["Код"];
-            $name = $product["Название"];
-
-            $code = mysqli_real_escape_string($conn, $code);
-            $name = mysqli_real_escape_string($conn, $name);
-
-            $sql = "SELECT id from a_product WHERE code='{$code}' and name='{$name}'";
-            $res = mysqli_query($conn, $sql);
-            $row = $res->fetch_assoc();
-            if(!empty($row['id']))
-            {
-                echo "\n" . "Внимание: запись где code = {$code}, name = {$name} уже существует!";
-            }
-            else{
-                $sql = "INSERT INTO a_product (code, name) VALUES ('{$code}', '{$name}')";
-                if (mysqli_query($conn, $sql)) {
-                    echo "\n" ."New record created successfully";
-                    $product_id = getProductId($conn, $code, $name);
-                    insertPrice($conn, $product, $product_id);
-                    insertProperty($conn, $product, $product_id);
-                    insertCategory($conn, $product, $product_id);
-
-                } else {
-                    echo "\n" ."Error: " . $sql . "<br>" . mysqli_error($conn);
-                }
-            }
-        }
+        $arValue = explode(':', $value);
+        var_dump($arValue);
+        return (new newView($arValue[0])) //TODO Поменял newBase на newView
+            ->setValue(unserialize(substr($value, strlen($arValue[0]) + 1
+                + strlen($arValue[1]) + 1 + strlen($arValue[1]))))
+            ->setProperty(unserialize(substr($value, strlen($arValue[0]) + 1 + strlen($arValue[1]) + 1 + strlen($arValue[1])))); //TODO менял расстановку скобок и добавлял strlen()
     }
-    else{
-        echo "\n Узла ТОВАР не существует в xml";
-    }
-
 }
-function importXml($a) // Финальная функция, если фаил доступен, то парсит и кладет в БД
+function gettype($value): string
 {
-    if (file_exists($a)) {
-        $xml = simplexml_load_file($a);
-        parseXml($xml);
-    } else {
-        exit('Не удалось открыть файл ' . $a);
+    if (is_object($value)) {
+        $type = get_class($value);
+        do {
+            if (strpos($type, "Test3\\newBase") !== false) { //TODO ? экранирование слеша
+                return 'test';
+            }
+        } while ($type = get_parent_class($type));
     }
+    return 'no test'; //TODO Убрал бесконечную рекурсию
 }
 
-importXml('file.xml');
+
+$obj = new newBase('12345');
+$obj->setValue('text');
+
+$obj2 = new newView('9876'); //TODO убрали 0, ибо было не число
+$obj2->setValue($obj);
+$obj2->setProperty('field');
+$obj2->getInfo();
+
+$save = $obj2->getSave();
+
+$obj3 = newView::load($save);
+
+var_dump($obj2->getSave() == $obj3->getSave());
+

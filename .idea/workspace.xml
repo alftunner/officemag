@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532c58f9-70f7-41a1-a78e-fb039553eab7" name="Default Changelist" comment="Последняя задача(не окончательная версия)">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.php" beforeDir="false" afterPath="$PROJECT_DIR$/2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3.php" beforeDir="false" afterPath="$PROJECT_DIR$/3.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/4.php" beforeDir="false" afterPath="$PROJECT_DIR$/4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/file2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +52,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/OpenServer/modules/php/PHP_7.1/php.exe" />
@@ -97,7 +96,10 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="532c58f9-70f7-41a1-a78e-fb039553eab7" name="Default Changelist" comment="" />
@@ -109,6 +111,7 @@
       <workItem from="1597241815901" duration="2015000" />
       <workItem from="1597843073556" duration="22719000" />
       <workItem from="1598282981101" duration="21763000" />
+      <workItem from="1600166226645" duration="85000" />
     </task>
     <task id="LOCAL-00001" summary="first task">
       <created>1597167036665</created>
@@ -163,7 +166,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
