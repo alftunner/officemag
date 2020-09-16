@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="532c58f9-70f7-41a1-a78e-fb039553eab7" name="Default Changelist" comment="Последняя задача(не окончательная версия)">
-      <change beforePath="$PROJECT_DIR$/2.php" beforeDir="false" afterPath="$PROJECT_DIR$/2.php" afterDir="false" />
+    <list default="true" id="532c58f9-70f7-41a1-a78e-fb039553eab7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3.php" beforeDir="false" afterPath="$PROJECT_DIR$/3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4.php" beforeDir="false" afterPath="$PROJECT_DIR$/4.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,10 +54,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/OpenServer/modules/php/PHP_7.1/php.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settings.php.debug.xdebug.proxy" />
   </component>
-  <component name="RunManager" selected="PHP Script.4.php">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\officemag" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHP Script.3.php">
     <configuration name="2.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/2.php">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -75,10 +79,10 @@
       </CommandLine>
       <method v="2" />
     </configuration>
-    <configuration name="4.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/4.php">
+    <configuration name="3.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/3.php">
       <CommandLine>
         <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP (1)" />
+          <option name="interpreterName" value="PHP" />
         </PhpTestInterpreterSettings>
       </CommandLine>
       <method v="2" />
@@ -86,11 +90,10 @@
     <list>
       <item itemvalue="PHP Script.2.php" />
       <item itemvalue="PHP Script.3.php" />
-      <item itemvalue="PHP Script.4.php" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHP Script.4.php" />
+        <item itemvalue="PHP Script.3.php" />
         <item itemvalue="PHP Script.3.php" />
         <item itemvalue="PHP Script.2.php" />
       </list>
@@ -111,7 +114,8 @@
       <workItem from="1597241815901" duration="2015000" />
       <workItem from="1597843073556" duration="22719000" />
       <workItem from="1598282981101" duration="21763000" />
-      <workItem from="1600166226645" duration="85000" />
+      <workItem from="1600166226645" duration="405000" />
+      <workItem from="1600244430026" duration="2770000" />
     </task>
     <task id="LOCAL-00001" summary="first task">
       <created>1597167036665</created>
@@ -162,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598300461972</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Весь код со второго этапа перенесен в фаил 2.php + добавлен фаил 3.php с комментариями моих исправлений">
+      <created>1600166448889</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1600166448889</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,9 +199,18 @@
     <MESSAGE value="Добавление экранирования значений для избежания sql-инъекций + проверка на наличие такой записи в БД" />
     <MESSAGE value="Добавление экранирования значений для избежания sql-инъекций + проверка на наличие такой записи в БД + проверка на наличие узлов xml" />
     <MESSAGE value="Последняя задача(не окончательная версия)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Последняя задача(не окончательная версия)" />
+    <MESSAGE value="Весь код со второго этапа перенесен в фаил 2.php + добавлен фаил 3.php с комментариями моих исправлений" />
+    <option name="LAST_COMMIT_MESSAGE" value="Весь код со второго этапа перенесен в фаил 2.php + добавлен фаил 3.php с комментариями моих исправлений" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="484" y="95" key="#3.php" timestamp="1600245118490">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="484" y="95" key="#3.php/0.0.1536.824@0.0.1536.824" timestamp="1600245118490" />
+    <state x="484" y="95" key="#4.php" timestamp="1600245101318">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="484" y="95" key="#4.php/0.0.1536.824@0.0.1536.824" timestamp="1600245101318" />
     <state x="540" y="175" key="#CLI_Interpreters" timestamp="1598373144742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -199,25 +219,33 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598372164430" />
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1600166445885">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1600166445885" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1597849852337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597849852337" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1598377745901">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1600267405136">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600267405136" />
     <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598377745901" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1598377745901">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1600267405136">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600267405136" />
     <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598377745901" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1598377745901">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1600267405136">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600267405136" />
     <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598377745901" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1598377745901">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1600267405136">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600267405136" />
     <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598377745901" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1598377745901">
       <screen x="0" y="0" width="1920" height="1040" />

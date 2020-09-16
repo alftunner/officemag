@@ -14,7 +14,7 @@ class newBase
     function __construct(int $name = null) //TODO не может быть нулём, только null
     {
         if (empty($name)) {
-            while (array_search(self::$count, self::$arSetName) != false) {
+            while (array_search(self::$count, self::$arSetName) !== false) { //TODO добавил строгое сравнение
                 ++self::$count;
             }
             $name = self::$count;
@@ -190,6 +190,12 @@ function gettype($value): string
     return 'no test'; //TODO Убрал бесконечную рекурсию
 }
 
+
+/*$obj1 = new newBase();
+echo $obj1->getName();
+
+$obj2 = new newBase();
+echo $obj2->getName();*/
 
 $obj = new newBase('12345');
 $obj->setValue('text');
